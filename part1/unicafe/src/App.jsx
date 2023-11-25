@@ -6,20 +6,27 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  return (
-    <div>
-	  <h1>give feedback</h1>
-	  <button onClick={() => setGood(good + 1)}>good</button>
-	  <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
-	  <button onClick={() => setBad(bad + 1)}>bad</button>
+  const sum = good + neutral + bad
+  const average = (good-bad) / sum
+  const positive = good / sum * 100
 
-	  <h2>statistics</h2>
-	  <div>good {good}</div>
-	  <div>neutral {neutral}</div>
-	  <div>bad {bad}</div>
-    </div>
-  )
-}
+    return (
+      <div>
+      <h1>give feedback</h1>
+      <button onClick={() => setGood(good + 1)}>good</button>
+      <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
+      <button onClick={() => setBad(bad + 1)}>bad</button>
 
-export default App
+      <h2>statistics</h2>
+      <div>good {good}</div>
+      <div>neutral {neutral}</div>
+      <div>bad {bad}</div>
+      <div>all {sum}</div>
+      <div>average {average}</div>
+      <div>positive {positive}%</div>
+      </div>
+      )
+      }
+
+      export default App
 
