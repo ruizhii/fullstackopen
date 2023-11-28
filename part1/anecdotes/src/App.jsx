@@ -25,6 +25,7 @@ const App = () => {
 
   return (
     <>
+      <h1>Anecdote of the day</h1>
       <div>
         {anecdotes[selected]}
       </div>
@@ -34,6 +35,13 @@ const App = () => {
       <button onClick={() => setSelected(getRandomInt(anecdotes.length))}>
         next anecdote
       </button>
+
+      <h1>Anecdote with most votes</h1>
+      <div>
+        <em>{anecdotes[Math.max(...votes)]}</em> 
+        <br />
+        <br />
+        has {Math.max(...votes)} votes</div>
     </>
   )
 }
